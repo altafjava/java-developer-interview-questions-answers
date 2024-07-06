@@ -4,17 +4,22 @@
 
 ## Table of Contents
 
-| No. | Questions                                                                                                                                                          |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-|     | **Core**                                                                                                                                                           |
-| 1   | [Write an implementation for this funtional interface?](#Write-an-implementation-for-this-funtional-interface)                                                     |
-| 2   | [Difference between map and flatmap in Java 8?](#Difference-between-map-and-flatmap-in-Java-8)                                                                     |
-| 3   | [Find the total marks of all students using Java 8 stream.](#Find-the-total-marks-of-all-students-using-Java-8-stream)                                             |
-| 4   | [Sort the students in descending order based on their marks using Java 8 stream.](#Sort-the-students-in-descending-order-based-on-their-marks-using-Java-8-stream) |
-| 5   | [What will be the output of the following code?](#What-will-be-the-output-of-the-following-code-5)                                                                 |
-| 6   | [What will be the output of the following code?](#What-will-be-the-output-of-the-following-code-6)                                                                 |
-|     | **Logical**                                                                                                                                                        |
-| 1   | [Reverse this array without new array.](#Reverse-this-array-without-new-array)                                                                                     |
+| No. | Questions                                                                                                                                                                  |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|     | **Core**                                                                                                                                                                   |
+| 1   | [Write an implementation for this funtional interface?](#Write-an-implementation-for-this-funtional-interface)                                                             |
+| 2   | [Difference between map and flatmap in Java 8?](#Difference-between-map-and-flatmap-in-Java-8)                                                                             |
+| 3   | [Find the total marks of all students using Java 8 stream.](#Find-the-total-marks-of-all-students-using-Java-8-stream)                                                     |
+| 4   | [Sort the students in descending order based on their marks using Java 8 stream.](#Sort-the-students-in-descending-order-based-on-their-marks-using-Java-8-stream)         |
+| 5   | [What will be the output of the following code?](#What-will-be-the-output-of-the-following-code-5)                                                                         |
+| 6   | [What will be the output of the following code?](#What-will-be-the-output-of-the-following-code-6)                                                                         |
+|     | **Logical**                                                                                                                                                                |
+| 1   | [Reverse this array without new array.](#Reverse-this-array-without-new-array)                                                                                             |
+| 2   | [Write a Java program that counts the frequency of each character in a given string.](#Write-a-Java-program-that-counts-the-frequency-of-each-character-in-a-given-string) |
+| 3   | [Find the length of the longest substring without repeating characters.](#Find-the-length-of-the-longest-substring-without-repeating-characters)                           |
+| 4   | [Find the longest non-repeating substring in a given string.](#Find-the-longest-non-repeating-substring-in-a-given-string)                                                 |
+|     | **Database**                                                                                                                                                               |
+| 1   | [Write a query to update city in employee table from address table.](#Write-a-query-to-update-city-in-employee-table-from-address-table)                                   |
 
 ## Core
 
@@ -106,7 +111,7 @@
    ```
 
    <div align="right">
-       <b><a href="#core">⬆ Back to Top</a></b>
+       <b><a href="#table-of-contents">⬆ Back to Top</a></b>
    </div>
 
 5. ### What will be the output of the following code 5?
@@ -186,3 +191,134 @@
    <div align="right">
        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
    </div>
+
+2. ### Write a Java program that counts the frequency of each character in a given string.
+
+   ```java
+    String str = "programming";
+    Map<Character, Integer> charFrequency = new HashMap<>();
+    for (char c : str.toCharArray()) {
+        charFrequency.put(c, charFrequency.getOrDefault(c, 0) + 1);
+    }
+    System.out.println(charFrequency);
+   ```
+
+   **Using Java 8 Stream API:**
+
+   ```java
+    String str = "programming";
+    Map<Character, Long> charFrequency = str.chars()
+            .mapToObj(c -> (char) c)
+            .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    System.out.println(charFrequency);
+   ```
+
+   Output:
+
+   ```
+   {p=1, r=2, o=1, g=2, a=1, m=2, i=1, n=1}
+   ```
+
+   <div align="right">
+       <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+   </div>
+
+3. ### Find the length of the longest substring without repeating characters.
+
+   ```java
+   public static String lengthOflongestNonRepeatingSubstring(String str) {
+       int max = 0;
+       Map<Character, Integer> map = new LinkedHashMap<>();
+       for (int i = 0; i < s.length(); i++) {
+           char ch = s.charAt(i);
+           if (map.containsKey(ch)) {
+               i = map.get(ch);
+               map.clear();
+           } else {
+               map.put(ch, i);
+           }
+           max = Math.max(max, map.size());
+       }
+       return max;
+   }
+   ```
+
+   ```java
+   String str = "abcabcbb";
+   System.out.println(lengthOflongestNonRepeatingSubstring(str));
+   ```
+
+   Output:
+
+   ```
+   3
+   ```
+
+   <div align="right">
+       <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+   </div>
+
+4. ### Find the longest non-repeating substring in a given string.
+
+   ```java
+   public static String longestNonRepeatingSubstring(String str) {
+       int maxLength = 0;
+        int start = 0;
+        String longestSubstring = "";
+        Map<Character, Integer> map = new HashMap<>();
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            if (map.containsKey(ch)) {
+                start = Math.max(start, map.get(ch) + 1);
+            }
+            map.put(ch, i);
+            if (i - start + 1 > maxLength) {
+                maxLength = i - start + 1;
+                longestSubstring = str.substring(start, i + 1);
+            }
+        }
+        return longestSubstring;
+   }
+   ```
+
+   ```java
+   String str = "abcabcbb";
+   System.out.println(longestNonRepeatingSubstring(str));
+   ```
+
+   Output:
+
+   ```
+   abc
+   ```
+
+   <div align="right">
+       <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+   </div>
+
+## Database
+
+1. ### Write a query to update city in employee table from address table.
+
+   ```sql
+   Employee Table
+   id
+   name
+   city
+
+   Address Table
+   id
+   city
+   ```
+
+   **Answer**:
+
+   ```sql
+   UPDATE employee e
+   JOIN address a ON e.id = a.id
+   SET e.city = a.city;
+   ```
+
+    <div align="right">
+        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+    </div>
