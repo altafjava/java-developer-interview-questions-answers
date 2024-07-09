@@ -4,28 +4,36 @@
 
 ## Table of Contents
 
-| No. | Questions                                                                                                                                                                  |
-| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|     | **Core Java**                                                                                                                                                              |
-| 1   | [Write an implementation for this funtional interface?](#Write-an-implementation-for-this-funtional-interface)                                                             |
-| 2   | [Difference between map and flatmap in Java 8?](#Difference-between-map-and-flatmap-in-Java-8)                                                                             |
-| 3   | [Find the total marks of all students using Java 8 stream.](#Find-the-total-marks-of-all-students-using-Java-8-stream)                                                     |
-| 4   | [Sort the students in descending order based on their marks using Java 8 stream.](#Sort-the-students-in-descending-order-based-on-their-marks-using-Java-8-stream)         |
-| 5   | [What will be the output of the following code?](#What-will-be-the-output-of-the-following-code-5)                                                                         |
-| 6   | [What will be the output of the following code?](#What-will-be-the-output-of-the-following-code-6)                                                                         |
-|     | **Logical**                                                                                                                                                                |
-| 1   | [Reverse this array without new array.](#Reverse-this-array-without-new-array)                                                                                             |
-| 2   | [Write a Java program that counts the frequency of each character in a given string.](#Write-a-Java-program-that-counts-the-frequency-of-each-character-in-a-given-string) |
-| 3   | [Find the length of the longest substring without repeating characters.](#Find-the-length-of-the-longest-substring-without-repeating-characters)                           |
-| 4   | [Find the longest non-repeating substring in a given string.](#Find-the-longest-non-repeating-substring-in-a-given-string)                                                 |
-| 5   | [Given a list of integers, find the 3rd largest number in O(n) time.](#Given-a-list-of-integers-find-the-3rd-largest-number-in-On-time)                                    |
-|     | **Database**                                                                                                                                                               |
-| 1   | [Write a query to update city in employee table from address table.](#Write-a-query-to-update-city-in-employee-table-from-address-table)                                   |
-| 2   | [Database Question 2](#Database-Question-2)                                                                                                                                |
-|     | **Apache Kafka**                                                                                                                                                           |
-| 1   | [Apache Kafka Question 1](#Apache-Kafka-Question-1)                                                                                                                        |
-|     | **Miscellaneous**                                                                                                                                                          |
-| 1   | [What is "Death by a thousand cuts" problem in software development?](#What-is-Death-by-a-thousand-cuts-problem-in-software-development)                                   |
+| No. | Questions                                                                                                                                                                                        |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|     | **Core Java**                                                                                                                                                                                    |
+| 1   | [Write an implementation for this funtional interface?](#Write-an-implementation-for-this-funtional-interface)                                                                                   |
+| 2   | [Difference between map and flatmap in Java 8?](#Difference-between-map-and-flatmap-in-Java-8)                                                                                                   |
+| 3   | [Find the total marks of all students using Java 8 stream.](#Find-the-total-marks-of-all-students-using-Java-8-stream)                                                                           |
+| 4   | [Sort the students in descending order based on their marks using Java 8 stream.](#Sort-the-students-in-descending-order-based-on-their-marks-using-Java-8-stream)                               |
+| 5   | [What will be the output of the following code?](#What-will-be-the-output-of-the-following-code-5)                                                                                               |
+| 6   | [What will be the output of the following code?](#What-will-be-the-output-of-the-following-code-6)                                                                                               |
+| 7   | [Find the minimum value from int array.](#Find-the-minimum-value-from-int-array)                                                                                                                 |
+|     | **Spring**                                                                                                                                                                                       |
+| 1   | [How to read value from custom properties file in spring?](#How-to-read-value-from-custom-properties-file-in-spring)                                                                             |
+| 2   | [What is MissingRequestHeaderException?](#What-is-MissingRequestHeaderException)                                                                                                                 |
+|     | **Hibernate/JPA**                                                                                                                                                                                |
+| 1   | [What is the significance of @Transient annotation?](#What-is-the-significance-of-Transient-annotation)                                                                                          |
+| 2   | [What is the N+1 problem in Hibernate?](#What-is-the-N1-problem-in-Hibernate)                                                                                                                    |
+| 3   | [Difference between CrudRepository's deleteAllByIds() and JpaRepository's deleteAllByIdsInBatch().](#Difference-between-CrudRepositorys-deleteAllByIds-and-JpaRepositorys-deleteAllByIdsInBatch) |
+|     | **Logical**                                                                                                                                                                                      |
+| 1   | [Reverse this array without new array.](#Reverse-this-array-without-new-array)                                                                                                                   |
+| 2   | [Write a Java program that counts the frequency of each character in a given string.](#Write-a-Java-program-that-counts-the-frequency-of-each-character-in-a-given-string)                       |
+| 3   | [Find the length of the longest substring without repeating characters.](#Find-the-length-of-the-longest-substring-without-repeating-characters)                                                 |
+| 4   | [Find the longest non-repeating substring in a given string.](#Find-the-longest-non-repeating-substring-in-a-given-string)                                                                       |
+| 5   | [Given a list of integers, find the 3rd largest number in O(n) time.](#Given-a-list-of-integers-find-the-3rd-largest-number-in-On-time)                                                          |
+|     | **Database**                                                                                                                                                                                     |
+| 1   | [Write a query to update city in employee table from address table.](#Write-a-query-to-update-city-in-employee-table-from-address-table)                                                         |
+| 2   | [Database Question 2](#Database-Question-2)                                                                                                                                                      |
+|     | **Apache Kafka**                                                                                                                                                                                 |
+| 1   | [Apache Kafka Question 1](#Apache-Kafka-Question-1)                                                                                                                                              |
+|     | **Miscellaneous**                                                                                                                                                                                |
+| 1   | [What is "Death by a thousand cuts" problem in software development?](#What-is-Death-by-a-thousand-cuts-problem-in-software-development)                                                         |
 
 ## Core Java
 
@@ -62,7 +70,7 @@
      System.out.println(mapResult); // prints [2, 4, 6, 8, 10]
      ```
 
-   - **flatMap**: The `flatMap` method transforms each element of a stream into a stream of objects and then combines all those streams into a single stream. It is particularly useful when we want to flatten a stream of collections or arrays into a single stream of elements. The function you pass to the `flatMap()` operation can return an arbitrary number of values for each input, facilitating a one-to-many mapping. This method performs both transformation and flattening, producing a stream of stream values, and is used for both transformation and mapping.
+   - **flatMap**: The `flatMap` method transforms each element of a stream into a stream of objects and then combines all those streams into a single stream. It is particularly useful when we want to flatten a stream of collections or arrays into a single stream of elements. The function we pass to the `flatMap()` operation can return an arbitrary number of values for each input, facilitating a one-to-many mapping. This method performs both transformation and flattening, producing a stream of stream values, and is used for both transformation and mapping.
 
      ```java
      List<List<Integer>> list = Arrays.asList(Arrays.asList(1, 2), Arrays.asList(3, 4), Arrays.asList(5, 6));
@@ -165,6 +173,275 @@
    <div align="right">
        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
    </div>
+
+7. ### Find the minimum value from int array.
+
+   ```java
+   int[] arr = { 2, 9, 4, 7, 1, 6 };
+   int min = Arrays.stream(arr).min().getAsInt();
+   System.out.println("Minimum value: " + min);
+   ```
+
+   Output:
+
+   ```
+   Minimum value: 1
+   ```
+
+   <div align="right">
+       <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+   </div>
+
+## Spring
+
+1. ### How to read value from custom properties file in spring?
+
+   To read values from a custom properties file in Spring, we can use the `@PropertySource` annotation to specify the location of the properties file and the `@Value` annotation to inject the property values into Spring beans.
+
+   **Example:**
+
+   1. **Create a custom properties file (`custom.properties`):**
+
+      ```properties
+      app.name=SpringApp
+      app.version=1.0
+      ```
+
+   2. **Load the custom properties file in Spring configuration class:**
+
+      ```java
+      @Configuration
+      @PropertySource("classpath:custom.properties")
+      public class AppConfig {
+          @Value("${app.name}")
+          private String appName;
+
+          @Value("${app.version}")
+          private String appVersion;
+
+          @Bean
+          public AppInfo appInfo() {
+              return new AppInfo(appName, appVersion);
+          }
+      }
+      ```
+
+    <div align="right">
+        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+    </div>
+
+2. ### What is MissingRequestHeaderException?
+
+   `MissingRequestHeaderException` is an exception in Spring that is thrown when a required header is missing from an HTTP request. This exception occurs when a controller method expects a specific header to be present in the request but the header is not provided.
+
+   **Example:**
+
+   ```java
+   @GetMapping("/user")
+   public ResponseEntity<User> getUserDetails(@RequestHeader("Authorization") String token) {
+       // Controller logic
+   }
+   ```
+
+   In the above example, the `getUserDetails` method expects an `Authorization` header to be present in the request. If the `Authorization` header is missing, a `MissingRequestHeaderException` will be thrown.
+
+   To handle this exception, we can use `@ExceptionHandler` in a controller advice or handle it within the controller method itself.
+
+   ```java
+   @ExceptionHandler(MissingRequestHeaderException.class)
+   public ResponseEntity<String> handleMissingRequestHeaderException(MissingRequestHeaderException ex) {
+       return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Required header is missing: " + ex.getHeaderName());
+   }
+   ```
+
+   <div align="right">
+       <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+   </div>
+
+## Hibernate/JPA
+
+1.  ### What is the significance of @Transient annotation?
+
+    The `@Transient` annotation in JPA is used to indicate that a field or property should not be persisted to the database. When an entity class is mapped to a database table, all its fields are persisted by default. However, there may be scenarios where certain fields should not be stored in the database, such as derived or transient fields that are calculated at runtime.
+
+    **Example:**
+
+    ```java
+    import javax.persistence.Transient;
+    @Entity
+    public class Employee {
+        @Id
+        private Long id;
+        private String name;
+        @Transient
+        private int age;
+        // Getters and setters
+    }
+    ```
+
+    In the above example, the `age` field is marked with the `@Transient` annotation, indicating that it should not be persisted to the database. The `age` field is considered transient and will not be included in the database schema when the `Employee` entity is mapped to a database table. The `@Transient` annotation can be applied to fields, properties, or methods in an entity class to exclude them from database persistence.
+
+    **Examples:**
+
+    1. _Calculated Fields:_ Sometimes, we might have fields whose values are calculated based on other persisted fields. These calculated fields do not need to be stored in the database because their values can be derived at runtime.
+
+       ```java
+       @Entity
+       public class Order {
+           @Id
+           private Long id;
+           private BigDecimal price;
+           private BigDecimal taxRate;
+           @Transient
+           private BigDecimal totalPrice; // Calculated as price + (price * taxRate)
+
+           public BigDecimal getTotalPrice() {
+               return price.add(price.multiply(taxRate));
+           }
+       }
+       ```
+
+    2. _Logging or Debugging Information:_ Fields used for logging or debugging purposes, which are useful during development or troubleshooting but do not need to be part of the persistent state.
+
+       ```java
+       @Entity
+       public class User {
+           @Id
+           private Long id;
+           private String username;
+           @Transient
+           private String debugMessage; // Used only for debugging, not persisted
+       }
+       ```
+
+    3. _Security or Sensitive Information:_ Sometimes, you might want to temporarily hold sensitive information like passwords or tokens in an entity for processing or validation, but you do not want these details to be stored in the database.
+
+       ```java
+       @Entity
+       public class Account {
+           @Id
+           private Long id;
+           private String accountName;
+
+           @Transient
+           private String temporaryAuthToken; // Sensitive information not to be persisted
+       }
+       ```
+
+    <div align="right">
+        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+    </div>
+
+2.  ### What is the N+1 problem in Hibernate?
+
+    The N+1 problem is a common performance issue that occurs when using an ORM framework like Hibernate to fetch data from a relational database. It arises when an entity is associated with a collection of child entities (one-to-many or many-to-many relationship), and the ORM framework generates N+1 SQL queries to fetch the associated child entities.
+
+    **Example:**
+
+    Consider the following entities `Author` and `Book` with a one-to-many relationship:
+
+    ```java
+    @Entity
+    public class Author {
+        @Id
+        private Long id;
+        private String name;
+        @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
+        private List<Book> books;
+    }
+
+    @Entity
+    public class Book {
+        @Id
+        private Long id;
+        private String title;
+        @ManyToOne
+        private Author author;
+    }
+    ```
+
+    If we fetch a list of authors along with their books using Hibernate, the N+1 problem occurs when Hibernate executes N+1 SQL queries to fetch the associated books for each author. For example, if there are 10 authors, Hibernate will execute 1 query to fetch the authors and then 10 additional queries to fetch the books for each author, resulting in a total of 11 queries (N+1).
+
+    **Solution:**
+
+    To avoid the N+1 problem in Hibernate, we can use fetch strategies like `FetchType.EAGER`, `JOIN FETCH` or `@BatchSize` to fetch the associated entities eagerly or in batches. By specifying the fetch strategy in the query or mapping annotations, we can optimize the data retrieval process and reduce the number of SQL queries executed by Hibernate.
+
+    **Example:**
+
+    1. **Using FetchType.EAGER:**
+
+       ```java
+       @Entity
+       public class Author {
+           @Id
+           private Long id;
+           private String name;
+           @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
+           private List<Book> books;
+       }
+       ```
+
+    2. **Using JOIN FETCH:**
+
+       ```java
+       List<Author> authors = entityManager.createQuery("SELECT a FROM Author a JOIN FETCH a.books", Author.class).getResultList();
+       ```
+
+    3. **Using @BatchSize:**
+
+       ```java
+       @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
+       @BatchSize(size = 10)
+       private List<Book> books;
+       ```
+
+    By using appropriate fetch strategies and tuning the mappings, we can mitigate the N+1 problem in Hibernate and improve the performance of data retrieval operations.
+
+    <div align="right">
+        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+    </div>
+
+3.  ### Difference between CrudRepository's deleteAllByIds() and JpaRepository's deleteAllByIdsInBatch().
+
+    Both `CrudRepository` and `JpaRepository` interfaces in Spring Data provide methods for deleting entities by their IDs. However, there are differences in the behavior and performance of the `deleteAllByIds()` method in `CrudRepository` and the `deleteAllByIdsInBatch()` method in `JpaRepository`.
+
+    - **CrudRepository's deleteAllByIds():**
+
+      - The `deleteAllByIds()` method in `CrudRepository` deletes entities one by one in a loop, resulting in multiple individual delete queries being executed for each ID.
+      - This method is suitable for deleting a small number of entities or when the number of entities to be deleted is not known in advance.
+      - It is less efficient for bulk deletion operations as it generates multiple delete queries, leading to increased database round trips and performance overhead.
+      - If the provided id is not present in the database, it will throw `EmptyResultDataAccessException`.
+
+      ```java
+      public interface UserRepository extends CrudRepository<User, Long> {
+            void deleteAllByIds(List<Long> ids);
+      }
+      ```
+
+    - **JpaRepository's deleteAllByIdsInBatch():**
+
+      - The `deleteAllByIdsInBatch()` method in `JpaRepository` performs batch deletion of entities using a single delete query with an `IN` clause containing the list of IDs to be deleted.
+      - This method is optimized for bulk deletion operations and is more efficient than `deleteAllByIds()` for deleting a large number of entities.
+      - It reduces the number of database round trips and improves performance by executing a single batch delete query for all the specified IDs.
+      - If the provided id not present in the database, it will not throw any exception.
+
+      ```java
+      public interface UserRepository extends JpaRepository<User, Long> {
+            @Modifying
+            @Query("DELETE FROM User u WHERE u.id IN :ids")
+            void deleteAllByIdsInBatch(@Param("ids") List<Long> ids);
+      }
+      ```
+
+    - **Usage:**
+      - Use `deleteAllByIds()` in `CrudRepository` for deleting a small number of entities or when the number of entities to be deleted is not large.
+      - Use `deleteAllByIdsInBatch()` in `JpaRepository` for bulk deletion of entities when deleting a large number of entities efficiently.
+
+    By choosing the appropriate method based on the number of entities to be deleted and the performance requirements, we can optimize the deletion process and improve the efficiency of bulk deletion operations in Spring Data repositories.
+
+    <div align="right">
+         <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+    </div>
 
 ## Logical
 
@@ -304,7 +581,7 @@
 
 5.  ### Given a list of integers, find the 3rd largest number in O(n) time.
 
-    To find the 3rd largest number in a list of integers with O(n) running time complexity in Java, you can use a single pass algorithm. The idea is to traverse the list once and keep track of the top three largest unique numbers using three variables. At the end of the traversal, the third-largest number will be stored in the third variable.
+    To find the 3rd largest number in a list of integers with O(n) running time complexity in Java, we can use a single pass algorithm. The idea is to traverse the list once and keep track of the top three largest unique numbers using three variables. At the end of the traversal, the third-largest number will be stored in the third variable.
 
     ```java
     public static void main(String[] args) {
