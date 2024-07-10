@@ -21,6 +21,7 @@
 | 1   | [What is the significance of @Transient annotation?](#What-is-the-significance-of-Transient-annotation)                                                                                          |
 | 2   | [What is the N+1 problem in Hibernate?](#What-is-the-N1-problem-in-Hibernate)                                                                                                                    |
 | 3   | [Difference between CrudRepository's deleteAllByIds() and JpaRepository's deleteAllByIdsInBatch().](#Difference-between-CrudRepositorys-deleteAllByIds-and-JpaRepositorys-deleteAllByIdsInBatch) |
+| 4   | [Differences among Repository, CrudRepository, PagingAndSortingRepository, and JpaRepository.](#Differences-among-Repository-CrudRepository-PagingAndSortingRepository-and-JpaRepository)        |
 |     | **Logical**                                                                                                                                                                                      |
 | 1   | [Reverse this array without new array.](#Reverse-this-array-without-new-array)                                                                                                                   |
 | 2   | [Write a Java program that counts the frequency of each character in a given string.](#Write-a-Java-program-that-counts-the-frequency-of-each-character-in-a-given-string)                       |
@@ -438,6 +439,62 @@
       - Use `deleteAllByIdsInBatch()` in `JpaRepository` for bulk deletion of entities when deleting a large number of entities efficiently.
 
     By choosing the appropriate method based on the number of entities to be deleted and the performance requirements, we can optimize the deletion process and improve the efficiency of bulk deletion operations in Spring Data repositories.
+
+    <div align="right">
+         <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+    </div>
+
+4.  ### Differences among Repository, CrudRepository, PagingAndSortingRepository, and JpaRepository.
+
+    - **Repository Interface:**
+
+      - The `Repository` interface is the base interface for all Spring Data repositories.
+      - It is a marker interface and does not provide any methods.
+      - It is used to enable the Spring Data infrastructure to detect repository interfaces and create their implementations.
+
+    - **CrudRepository Interface:**
+
+      - The `CrudRepository` interface extends the `Repository` interface and provides generic CRUD (Create, Read, Update, Delete) operations for entity classes.
+      - It includes methods like:
+        - `save(S entity)`: Saves a given entity.
+        - `saveAll(Iterable<S> entities)`: Saves all given entities.
+        - `findById(ID id)`: Retrieves an entity by its ID.
+        - `existsById(ID id)`: Checks if an entity exists by its ID.
+        - `findAll()`: Returns all entities.
+        - `findAllById(Iterable<ID> ids)`: Returns all entities with the given IDs.
+        - `count()`: Returns the count of entities.
+        - `deleteById(ID id)`: Deletes an entity by its ID.
+        - `delete(T entity)`: Deletes a given entity.
+        - `deleteById(Iterable<? extends ID> ids)`: Deletes all entities with the given IDs.
+        - `deleteAll(Iterable<? extends S> entities)`: Deletes all given entities.
+        - `deleteAll()`: Deletes all entities.
+
+    - **PagingAndSortingRepository Interface:**
+
+      - The `PagingAndSortingRepository` interface extends the `CrudRepository` interface and provides additional methods for pagination and sorting of query results.
+      - It includes methods like:
+        - `findAll(Sort sort)`: Returns all entities sorted by the given options.
+        - `findAll(Pageable pageable)`: Returns a `Page` of entities meeting the paging restriction provided in the `Pageable` object.
+
+    - **JpaRepository Interface:**
+
+      - The `JpaRepository` interface extends the `PagingAndSortingRepository` interface and provides JPA-specific operations.
+      - It includes all the methods of `CrudRepository` and `PagingAndSortingRepository` and adds JPA-specific methods such as:
+        - `saveAndFlush(S entity)`: Saves an entity and flushes changes instantly.
+        - `deleteAllInBatch(Iterable<T> entities)`: Deletes all entities in a batch.
+        - `deleteAllByIdInBatch(Iterable<T> ids)`: Deletes all entities with the given IDs in a batch.
+        - `deleteAllInBatch()`: Deletes all entities in a batch.
+        - `getOne(ID id)`: Retrieves a reference to the entity with the given ID.
+        - `findAll()`: Returns all entities.
+        - `findAll(Sort sort)`: Returns all entities sorted by the given options.
+        - `findAllById(Iterable<ID> ids)`: Returns all entities with the given IDs.
+
+    **Scenarios for Choosing Each Interface**:
+
+    - Use `Repository` if we only need to mark an interface as a repository without any specific methods.
+    - Use `CrudRepository` for basic CRUD operations without the need for pagination or sorting.
+    - Use `PagingAndSortingRepository` when we need to retrieve entities with pagination and sorting capabilities.
+    - Use `JpaRepository` when we require advanced JPA-specific features in addition to CRUD operations, pagination, and sorting.
 
     <div align="right">
          <b><a href="#table-of-contents">⬆ Back to Top</a></b>
