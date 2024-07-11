@@ -28,11 +28,15 @@
 | 3   | [Find the length of the longest substring without repeating characters.](#Find-the-length-of-the-longest-substring-without-repeating-characters)                                                 |
 | 4   | [Find the longest non-repeating substring in a given string.](#Find-the-longest-non-repeating-substring-in-a-given-string)                                                                       |
 | 5   | [Given a list of integers, find the 3rd largest number in O(n) time.](#Given-a-list-of-integers-find-the-3rd-largest-number-in-On-time)                                                          |
+| 6   | [Given an array of integers, find all subarrays whose sum is equal to 5.](#Given-an-array-of-integers-find-all-subarrays-whose-sum-is-equal-to-5)                                                |
 |     | **Database**                                                                                                                                                                                     |
 | 1   | [Write a query to update city in employee table from address table.](#Write-a-query-to-update-city-in-employee-table-from-address-table)                                                         |
 | 2   | [Database Question 2](#Database-Question-2)                                                                                                                                                      |
+| 3   | [Find duplicate rows from the below shop table.](#Find-duplicate-rows-from-the-below-shop-table)                                                                                                 |
 |     | **Apache Kafka**                                                                                                                                                                                 |
-| 1   | [Apache Kafka Question 1](#Apache-Kafka-Question-1)                                                                                                                                              |
+| 1   | [Can you explain the internal architecture of Kafka?](#Can-you-explain-the-internal-architecture-of-Kafka)                                                                                       |
+| 2   | [How do you manage a Kafka broker failure?](#How-do-you-manage-a-Kafka-broker-failure)                                                                                                           |
+| 3   | [Apache Kafka Question 1](#Apache-Kafka-Question-3)                                                                                                                                              |
 |     | **Miscellaneous**                                                                                                                                                                                |
 | 1   | [What is "Death by a thousand cuts" problem in software development?](#What-is-Death-by-a-thousand-cuts-problem-in-software-development)                                                         |
 
@@ -730,6 +734,46 @@
         <b><a href="#table-of-contents">⬆ Back to Top</a></b>
     </div>
 
+6.  ### Given an array of integers, find all subarrays whose sum is equal to 5.
+
+    To find all subarrays in an array of integers whose sum is equal to a given target sum (e.g., 5), we can use a sliding window approach. The idea is to maintain a window that expands and contracts based on the sum of elements within the window. We can use two pointers (start and end) to represent the window and move them accordingly to find subarrays with the desired sum.
+
+    ```java
+    public static void findSubarraysWithSum(int[] arr, int targetSum) {
+        int start = 0, end = 0, sum = 0;
+        while (end < arr.length) {
+            sum += arr[end];
+            while (sum > targetSum) {
+                sum -= arr[start];
+                start++;
+            }
+            if (sum == targetSum) {
+                System.out.println("Subarray with sum 5 found: " + Arrays.toString(Arrays.copyOfRange(arr, start, end + 1)));
+            }
+            end++;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 2, 1, 4, 1};
+        int targetSum = 5;
+        findSubarraysWithSum(arr, targetSum);
+    }
+    ```
+
+    Output:
+
+    ```
+    Subarray with sum 5 found: [2, 3]
+    Subarray with sum 5 found: [3, 2]
+    Subarray with sum 5 found: [1, 4]
+    Subarray with sum 5 found: [4, 1]
+    ```
+
+    <div align="right">
+        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+    </div>
+
 ## Database
 
 1. ### Write a query to update city in employee table from address table.
@@ -770,9 +814,125 @@
         <b><a href="#table-of-contents">⬆ Back to Top</a></b>
     </div>
 
+3. ### Find duplicate rows from the below shop table.
+   ```
+   id | name    | category
+   ---|---------|---------
+   1  | steak   | meat
+   2  | cake    | sweets
+   3  | steak   | meat
+   4  | chicken | meat
+   5  | cake    | sweets
+   6  | cake    | sweets
+   ```
+   **Answer:**
+   ```sql
+   SELECT name, category, COUNT(*)
+   FROM shop
+   GROUP BY name, category
+   HAVING COUNT(*) > 1;
+   ```
+   Output:
+   ```
+   name | category | count
+   -----|----------|------
+   steak| meat     | 2
+   cake | sweets   | 3
+   ```
+   <div align="right">
+       <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+   </div>
+
 ## Apache Kafka
 
-1. ### Apache Kafka Question 1
+1. ### Can you explain the internal architecture of Kafka?
+
+   Apache Kafka is a distributed streaming platform that is designed to handle large-scale data processing (with high throughput, fault tolerance, and scalability) and real-time event streaming. The internal architecture of Kafka consists of several key components that work together to provide high throughput, fault tolerance, and scalability. Here is an overview of the internal architecture of Kafka:
+
+   1. **Broker:** A Kafka cluster consists of one or more brokers, which are individual servers that store and manage topics and partitions. Each broker is responsible for handling client requests, storing data, and replicating data across the cluster.
+
+      - _Leader and Follower_: For each partition, one broker is elected as the leader, and one or more brokers are followers. The leader handles all read and write requests, while followers replicate the data to ensure fault tolerance.
+
+   2. **Topic:** A topic is a logical channel to which data is sent and from which data is read. Topics are categories or feed names to which messages are published. Topics are divided into partitions to allow for parallel processing and distribution of messages across multiple brokers.
+
+   3. **Partition:** Each topic is split into multiple partitions. Partitions allow Kafka to scale horizontally and provide parallelism. Each partition is an ordered, immutable sequence of records that are continually appended.
+
+   4. **Producer:** Producers are client applications that send records to a Kafka topic. Producers can choose which partition to send records to within a topic (usually using a key for partitioning).
+
+      - _Acknowledgment_: Producers can choose to receive acknowledgments from brokers after successfully writing messages to Kafka. Acknowledgments can be synchronous or asynchronous, depending on the desired level of reliability.
+
+   5. **Consumer:** Consumers are client applications that subscribe to topics and consume messages from Kafka partitions. Consumers read messages from partitions in the order they were produced. Consumers can be part of a consumer group, where each record is delivered to one consumer in the group, ensuring load balancing and fault tolerance.
+
+      - _Consumer Group_: A consumer group is a group of consumers that work together to consume messages from one or more topics. Each consumer in a group is assigned a subset of partitions to read from, enabling parallel processing and load balancing.
+      - _Offset Management_: Consumers track their progress by storing the offset of the last message they have read, allowing them to resume reading from the correct position after a restart.
+      - _Consumer Rebalancing_: Kafka automatically rebalances partitions among consumers in a consumer group when new consumers join or existing consumers leave the group.
+      - _Consumer Offset Commitment_: Consumers can commit offsets to Kafka to indicate that they have successfully processed messages. This allows consumers to resume reading from the last committed offset in case of failure.
+
+   6. **ZooKeeper:** ZooKeeper is used by Kafka for cluster coordination, metadata management, and leader election. ZooKeeper maintains information about brokers, topics, partitions, and consumer groups, ensuring consistency and synchronization across the Kafka cluster.
+
+   7. **Replication:** Kafka uses replication to ensure fault tolerance and data durability. Each partition is replicated across multiple brokers, with one broker serving as the leader and the others as followers. Replication allows Kafka to recover from broker failures and maintain data availability.
+
+      - _In-Sync Replicas (ISR)_: Kafka maintains a set of in-sync replicas (ISRs) for each partition, which are replicas that are up-to-date with the leader. ISRs are used to ensure data consistency and fault tolerance.
+
+   8. **Log Segments:** Kafka stores messages in log segments, which are sequential files on disk. Each partition consists of multiple log segments, and older log segments are periodically compacted and deleted to manage disk space efficiently.
+
+   9. **Offset:** An offset is a unique identifier assigned to each message within a partition. Consumers track their progress by storing the offset of the last message they have read, allowing them to resume reading from the correct position after a restart.
+
+   10. **Controller:** One of the brokers in a Kafka cluster is designated as the controller. The controller is responsible for administrative tasks like partition assignment, leader election, and reassigning partitions in case of broker failures. The controller ensures the overall health and stability of the Kafka cluster. If the controller fails, another broker is elected as the new controller.
+
+   ```
+                 +-------------------------+
+                 |       ZooKeeper         |
+                 +-----------+-------------+
+                             |
+                             |
+                             v
+         +-------------------+--------------------+
+         |         Kafka Cluster (Brokers)        |
+         |                                        |
+         | +---------+   +---------+   +---------+ |
+         | | Broker 1|   | Broker 2|   | Broker 3| |
+         | +----+----+   +----+----+   +----+----+ |
+         |      |             |             |      |
+         +------+-------------+-------------+------+
+                |             |             |
+        +-------v------+ +----v-------+ +---v-------+
+        |   Topic A    | |  Topic B   | |  Topic C  |
+        +--------------+ +------------+ +-----------+
+        | Part. 0 | Part. 1 | Part. 2 | Part. 0 | ... |
+        +---------+ +-------+ +-------+ +-------+-----+
+
+   ```
+
+    <div align="right">
+        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+    </div>
+
+2. ### How do you manage a Kafka broker failure?
+
+   Managing a Kafka broker failure involves taking appropriate steps to ensure the availability and reliability of the Kafka cluster. When a broker fails, it can impact the overall performance and data replication of the cluster. Here are some strategies to manage a Kafka broker failure:
+
+   1. **Monitoring and Alerting:** Implement monitoring tools to detect broker failures and set up alerts to notify administrators when a broker goes down. Monitoring tools can track metrics like CPU usage, memory consumption, disk space, and network traffic to identify potential issues.
+
+      _Example:_ Prometheus, Grafana, Nagios, Datadog.
+
+   2. **Replication Factor:** Configure the replication factor for topics to ensure data redundancy across multiple brokers. By setting a replication factor of at least 2 or 3, Kafka can maintain multiple copies of data across brokers, allowing for data recovery in case of a broker failure.
+
+   3. **Broker Reassignment:** If a broker fails, Kafka can automatically reassign the partitions hosted on the failed broker to other healthy brokers in the cluster. This process is known as partition reassignment and helps maintain data availability and fault tolerance.
+
+   4. **Broker Replacement:** In the event of a permanent broker failure, replace the failed broker with a new broker to restore the cluster's capacity and performance. The replacement broker should have the same configuration and storage capacity as the failed broker to maintain consistency.
+
+   5. **Data Recovery:** If data loss occurs due to a broker failure, Kafka can recover data from the replicated partitions on other brokers. By leveraging the replication factor and data retention policies, Kafka can restore lost data and maintain data integrity.
+
+   6. **Cluster Scaling:** To prevent performance degradation during a broker failure, scale the Kafka cluster horizontally by adding more brokers. A larger cluster with additional brokers can distribute the workload and improve fault tolerance, reducing the impact of individual broker failures.
+
+   7. **Backup and Disaster Recovery:** Implement backup and disaster recovery strategies to protect data in case of catastrophic failures. Regularly back up Kafka data and configurations, and establish disaster recovery procedures to restore the cluster in the event of a major outage.
+
+   <div align="right">
+       <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+   </div>
+
+3. ### Apache Kafka Question 3
 
    **Question:**
    A Kafka topic has 100 messages distributed equally across 10 partitions. If there are only 4 consumers subscribed to this topic, explain how the messages will be consumed by the consumers. How will Kafka manage the distribution of partitions among the consumers?
