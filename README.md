@@ -4,41 +4,45 @@
 
 ## Table of Contents
 
-| No. | Questions                                                                                                                                                                                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-|     | **Core Java**                                                                                                                                                                                    |
-| 1   | [Write an implementation for this funtional interface?](#Write-an-implementation-for-this-funtional-interface)                                                                                   |
-| 2   | [Difference between map and flatmap in Java 8?](#Difference-between-map-and-flatmap-in-Java-8)                                                                                                   |
-| 3   | [Find the total marks of all students using Java 8 stream.](#Find-the-total-marks-of-all-students-using-Java-8-stream)                                                                           |
-| 4   | [Sort the students in descending order based on their marks using Java 8 stream.](#Sort-the-students-in-descending-order-based-on-their-marks-using-Java-8-stream)                               |
-| 5   | [What will be the output of the following code?](#What-will-be-the-output-of-the-following-code-5)                                                                                               |
-| 6   | [What will be the output of the following code?](#What-will-be-the-output-of-the-following-code-6)                                                                                               |
-| 7   | [Find the minimum value from int array.](#Find-the-minimum-value-from-int-array)                                                                                                                 |
-|     | **Spring**                                                                                                                                                                                       |
-| 1   | [How to read value from custom properties file in spring?](#How-to-read-value-from-custom-properties-file-in-spring)                                                                             |
-| 2   | [What is MissingRequestHeaderException?](#What-is-MissingRequestHeaderException)                                                                                                                 |
-|     | **Hibernate/JPA**                                                                                                                                                                                |
-| 1   | [What is the significance of @Transient annotation?](#What-is-the-significance-of-Transient-annotation)                                                                                          |
-| 2   | [What is the N+1 problem in Hibernate?](#What-is-the-N1-problem-in-Hibernate)                                                                                                                    |
-| 3   | [Difference between CrudRepository's deleteAllByIds() and JpaRepository's deleteAllByIdsInBatch().](#Difference-between-CrudRepositorys-deleteAllByIds-and-JpaRepositorys-deleteAllByIdsInBatch) |
-| 4   | [Differences among Repository, CrudRepository, PagingAndSortingRepository, and JpaRepository.](#Differences-among-Repository-CrudRepository-PagingAndSortingRepository-and-JpaRepository)        |
-|     | **Logical**                                                                                                                                                                                      |
-| 1   | [Reverse this array without new array.](#Reverse-this-array-without-new-array)                                                                                                                   |
-| 2   | [Write a Java program that counts the frequency of each character in a given string.](#Write-a-Java-program-that-counts-the-frequency-of-each-character-in-a-given-string)                       |
-| 3   | [Find the length of the longest substring without repeating characters.](#Find-the-length-of-the-longest-substring-without-repeating-characters)                                                 |
-| 4   | [Find the longest non-repeating substring in a given string.](#Find-the-longest-non-repeating-substring-in-a-given-string)                                                                       |
-| 5   | [Given a list of integers, find the 3rd largest number in O(n) time.](#Given-a-list-of-integers-find-the-3rd-largest-number-in-On-time)                                                          |
-| 6   | [Given an array of integers, find all subarrays whose sum is equal to 5.](#Given-an-array-of-integers-find-all-subarrays-whose-sum-is-equal-to-5)                                                |
-|     | **Database**                                                                                                                                                                                     |
-| 1   | [Write a query to update city in employee table from address table.](#Write-a-query-to-update-city-in-employee-table-from-address-table)                                                         |
-| 2   | [Database Question 2](#Database-Question-2)                                                                                                                                                      |
-| 3   | [Find duplicate rows from the below shop table.](#Find-duplicate-rows-from-the-below-shop-table)                                                                                                 |
-|     | **Apache Kafka**                                                                                                                                                                                 |
-| 1   | [Can you explain the internal architecture of Kafka?](#Can-you-explain-the-internal-architecture-of-Kafka)                                                                                       |
-| 2   | [How do you manage a Kafka broker failure?](#How-do-you-manage-a-Kafka-broker-failure)                                                                                                           |
-| 3   | [Apache Kafka Question 1](#Apache-Kafka-Question-3)                                                                                                                                              |
-|     | **Miscellaneous**                                                                                                                                                                                |
-| 1   | [What is "Death by a thousand cuts" problem in software development?](#What-is-Death-by-a-thousand-cuts-problem-in-software-development)                                                         |
+| No. | Questions                                                                                                                                                                                           |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|     | **Core Java**                                                                                                                                                                                       |
+| 1   | [Write an implementation for this funtional interface?](#Write-an-implementation-for-this-funtional-interface)                                                                                      |
+| 2   | [Difference between map and flatmap in Java 8?](#Difference-between-map-and-flatmap-in-Java-8)                                                                                                      |
+| 3   | [Find the total marks of all students using Java 8 stream.](#Find-the-total-marks-of-all-students-using-Java-8-stream)                                                                              |
+| 4   | [Sort the students in descending order based on their marks using Java 8 stream.](#Sort-the-students-in-descending-order-based-on-their-marks-using-Java-8-stream)                                  |
+| 5   | [What will be the output of the following code?](#What-will-be-the-output-of-the-following-code-5)                                                                                                  |
+| 6   | [What will be the output of the following code?](#What-will-be-the-output-of-the-following-code-6)                                                                                                  |
+| 7   | [Find the minimum value from int array.](#Find-the-minimum-value-from-int-array)                                                                                                                    |
+| 8   | [Core Java Question 8](#Core-Java-Question-8)                                                                                                                                                       |
+|     | **Spring**                                                                                                                                                                                          |
+| 1   | [How to read value from custom properties file in spring?](#How-to-read-value-from-custom-properties-file-in-spring)                                                                                |
+| 2   | [What is MissingRequestHeaderException?](#What-is-MissingRequestHeaderException)                                                                                                                    |
+|     | **Hibernate/JPA**                                                                                                                                                                                   |
+| 1   | [What is the significance of @Transient annotation?](#What-is-the-significance-of-Transient-annotation)                                                                                             |
+| 2   | [What is the N+1 problem in Hibernate?](#What-is-the-N1-problem-in-Hibernate)                                                                                                                       |
+| 3   | [Difference between CrudRepository's deleteAllByIds() and JpaRepository's deleteAllByIdsInBatch().](#Difference-between-CrudRepositorys-deleteAllByIds-and-JpaRepositorys-deleteAllByIdsInBatch)    |
+| 4   | [Differences among Repository, CrudRepository, PagingAndSortingRepository, and JpaRepository.](#Differences-among-Repository-CrudRepository-PagingAndSortingRepository-and-JpaRepository)           |
+|     | **Data Structure**                                                                                                                                                                                  |
+| 1   | [Reverse this array without new array.](#Reverse-this-array-without-new-array)                                                                                                                      |
+| 2   | [Write a Java program that counts the frequency of each character in a given string.](#Write-a-Java-program-that-counts-the-frequency-of-each-character-in-a-given-string)                          |
+| 3   | [Find the length of the longest substring without repeating characters.](#Find-the-length-of-the-longest-substring-without-repeating-characters)                                                    |
+| 4   | [Find the longest non-repeating substring in a given string.](#Find-the-longest-non-repeating-substring-in-a-given-string)                                                                          |
+| 5   | [Given a list of integers, find the 3rd largest number in O(n) time.](#Given-a-list-of-integers-find-the-3rd-largest-number-in-On-time)                                                             |
+| 6   | [Given an array of integers, find all subarrays whose sum is equal to 5.](#Given-an-array-of-integers-find-all-subarrays-whose-sum-is-equal-to-5)                                                   |
+| 7   | [Given two integer arrays, find the common elements between them.](#Given-two-integer-arrays-find-the-common-elements-between-them)                                                                 |
+| 8   | [Given two integer arrays, determine if they contain the same elements regardless of their order.](#Given-two-integer-arrays-determine-if-they-contain-the-same-elements-regardless-of-their-order) |
+| 9   | [DSA Question 9](#DSA-Question-9)                                                                                                                                                                   |
+|     | **Database**                                                                                                                                                                                        |
+| 1   | [Write a query to update city in employee table from address table.](#Write-a-query-to-update-city-in-employee-table-from-address-table)                                                            |
+| 2   | [Database Question 2](#Database-Question-2)                                                                                                                                                         |
+| 3   | [Find duplicate rows from the below shop table.](#Find-duplicate-rows-from-the-below-shop-table)                                                                                                    |
+|     | **Apache Kafka**                                                                                                                                                                                    |
+| 1   | [Can you explain the internal architecture of Kafka?](#Can-you-explain-the-internal-architecture-of-Kafka)                                                                                          |
+| 2   | [How do you manage a Kafka broker failure?](#How-do-you-manage-a-Kafka-broker-failure)                                                                                                              |
+| 3   | [Apache Kafka Question 1](#Apache-Kafka-Question-3)                                                                                                                                                 |
+|     | **Miscellaneous**                                                                                                                                                                                   |
+| 1   | [What is "Death by a thousand cuts" problem in software development?](#What-is-Death-by-a-thousand-cuts-problem-in-software-development)                                                            |
 
 ## Core Java
 
@@ -192,6 +196,36 @@
    ```
    Minimum value: 1
    ```
+
+   <div align="right">
+       <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+   </div>
+
+8. ### Core Java Question 8
+
+   1. What is the term used to describe the ability of an object to take many forms?
+
+   - a) Inheritance b) Encapsulation c) Polymorphism d) Abstraction
+
+     **Answer:** c) Polymorphism
+
+   2. In Java, which type of polymorphism is achieved through method overriding?
+
+   - a) Compile-time polymorphism b) Run-time polymorphism c) Static polymorphism d) Dynamic polymorphism
+
+     **Answer:** d) Dynamic polymorphism
+
+   3. Which principle of object-oriented programming (OOP) is closely related to polymorphism?
+
+   - a) Inheritance b) Encapsulation c) Abstraction d) Composition
+
+     **Answer:** a) Inheritance
+
+   4. Which of the following is NOT a thread-safe collection in Java?
+
+   - a) ArrayList b) ConcurrentHashMap c) CopyOnWriteArrayList d) LinkedBlockingQueue
+
+     **Answer:** a) ArrayList
 
    <div align="right">
        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
@@ -769,6 +803,138 @@
     Subarray with sum 5 found: [1, 4]
     Subarray with sum 5 found: [4, 1]
     ```
+
+    <div align="right">
+        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+    </div>
+
+7.  ### Given two integer arrays, find the common elements between them.
+
+    ```
+    int [] arr1 = {23,2,87,63,26};
+    int [] arr2 = {45,87,62,2};
+    ```
+
+    **Answer:**
+
+    ```java
+    public static void findCommonElements(int[] arr1, int[] arr2) {
+        Set<Integer> set = new HashSet<>();
+        for (int num : arr1) {
+            set.add(num);
+        }
+        System.out.print("Common elements: ");
+        for (int num : arr2) {
+            if (set.contains(num)) {
+                System.out.print(num + " ");
+            }
+        }
+    }
+    ```
+
+    ```java
+    int[] arr1 = {23, 2, 87, 63, 26};
+    int[] arr2 = {45, 87, 62, 2};
+    findCommonElements(arr1, arr2);
+    ```
+
+    Output:
+
+    ```
+    Common elements: 87 2
+    ```
+
+    <div align="right">
+        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+    </div>
+
+8.  ### Given two integer arrays, determine if they contain the same elements regardless of their order.
+
+    ```
+    int[] arr1 = {1, 3, 4, 5};
+    int[] arr2 = {3, 4, 1, 5};
+    // Expected output: true
+
+    int[] arr1 = {1, 9, 4, 5};
+    int[] arr2 = {3, 4, 1, 5};
+    // Expected output: false
+    ```
+
+    **Answer:**
+
+    ```java
+    public static boolean areEqualArrays(int[] arr1, int[] arr2) {
+        if (arr1.length != arr2.length) {
+            return false;
+        }
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int num : arr1) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+        for (int num : arr2) {
+            if (!map.containsKey(num) || map.get(num) == 0) {
+                return false;
+            }
+            map.put(num, map.get(num) - 1);
+        }
+        return true;
+    }
+    ```
+
+    ```java
+    int[] arr1 = {1, 3, 4, 5};
+    int[] arr2 = {3, 4, 1, 5};
+    System.out.println(areEqualArrays(arr1, arr2)); // true
+    ```
+
+    ```java
+    int[] arr1 = {1, 9, 4, 5};
+    int[] arr2 = {3, 4, 1, 5};
+    System.out.println(areEqualArrays(arr1, arr2)); // false
+    ```
+
+    Output:
+
+    ```
+    true
+    false
+    ```
+
+    <div align="right">
+        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+    </div>
+
+9.  ### DSA Question 9
+
+    1. Which data structure organizes elements in a sorted manner and supports efficient search, insertion, and deletion operations?
+
+    - a) Array b) Stack c) Queue d) Binary Search Tree
+
+    **Answer:** d) Binary Search Tree
+
+    2. Which data structure uses a dynamic array to store elements and allows for random access to elements?
+
+    - a) Stack b) Queue c) ArrayList d) LinkedList
+
+    **Answer:** c) ArrayList
+
+    3. What is the time complexity of searching for an element in an ArrayList?
+
+    - a) O(1) b) O(log n) c) O(n) d) O(n^2)
+
+    **Answer:** c) O(n)
+
+    4. Which of the following data structures stores elements in a sorted order?
+
+    - a) HashSet b) LinkedList c) Stack d) TreeMap
+
+    **Answer:** d) TreeMap
+
+    5. Which data structure provides constant time complexity for inserting, deleting, and searching elements?
+
+    - a) LinkedList b) Stack c) Queue d) HashMap
+
+    **Answer:** d) HashMap
 
     <div align="right">
         <b><a href="#table-of-contents">⬆ Back to Top</a></b>
