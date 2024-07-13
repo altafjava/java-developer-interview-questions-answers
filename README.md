@@ -33,6 +33,8 @@
 | 7   | [Given two integer arrays, find the common elements between them.](#Given-two-integer-arrays-find-the-common-elements-between-them)                                                                 |
 | 8   | [Given two integer arrays, determine if they contain the same elements regardless of their order.](#Given-two-integer-arrays-determine-if-they-contain-the-same-elements-regardless-of-their-order) |
 | 9   | [DSA Question 9](#DSA-Question-9)                                                                                                                                                                   |
+| 10  | [Given a string reverse the vowels from right to left.](#Given-a-string-reverse-the-vowels-from-right-to-left)                                                                                      |
+| 11  | [Max Sum of a Pair With Equal Sum of Digits](#Max-Sum-of-a-Pair-With-Equal-Sum-of-Digits)                                                                                                           |
 |     | **Database**                                                                                                                                                                                        |
 | 1   | [Write a query to update city in employee table from address table.](#Write-a-query-to-update-city-in-employee-table-from-address-table)                                                            |
 | 2   | [Database Question 2](#Database-Question-2)                                                                                                                                                         |
@@ -935,6 +937,112 @@
     - a) LinkedList b) Stack c) Queue d) HashMap
 
     **Answer:** d) HashMap
+
+    <div align="right">
+        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+    </div>
+
+10. ### Given a string reverse the vowels from right to left.
+
+    ```java
+    String s = "focusNEARgarden";
+    // Output should be: "fecasNAERgurdon"
+    ```
+
+    **Answer:**
+
+    ```java
+    public static String reverseVowels(String s) {
+        char[] chars = s.toCharArray();
+        String vowels = "aeiouAEIOU";
+        int left = 0, right = chars.length - 1;
+        while (left < right) {
+            while (left < right && !vowels.contains(chars[left] + "")) {
+                left++;
+            }
+            while (left < right && !vowels.contains(chars[right] + "")) {
+                right--;
+            }
+            if (left < right) {
+                char temp = chars[left];
+                chars[left] = chars[right];
+                chars[right] = temp;
+                left++;
+                right--;
+            }
+        }
+        return new String(chars);
+    }
+    ```
+
+    ```java
+    String s = "focusneargarden";
+    System.out.println(reverseVowels(s));
+    ```
+
+    Output:
+
+    ```
+    fecasNAERgurdon
+    ```
+
+    <div align="right">
+        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+    </div>
+
+11. ### Max Sum of a Pair With Equal Sum of Digits
+
+    **Question:** You are given a 0-indexed array nums consisting of positive integers. You can choose two indices `i` and `j`, such that `i != j`, and the sum of digits of the number `nums[i]` is equal to that of `nums[j]`. Return the maximum value of `nums[i] + nums[j]` that you can obtain over all possible indices `i` and `j` that satisfy the conditions.
+
+    ```
+    Input: nums = [18,43,36,13,7]
+    Output: 54
+
+    Explanation:
+    Pairing:
+    18 and 36 -> 1+8 + 3+6 = 9 + 9 = 18
+    43 and 7  -> 4+3 + 7   = 7 + 7 = 14
+    18 and 43 -> 1+8 + 4+3 = 9 + 7 = 16
+    36 and 13 -> 3+6 + 1+3 = 9 + 4 = 13
+    18 and 7  -> 1+8 + 7   = 9 + 7 = 16
+
+    Maximum sum: 54 (from pairing 18 and 36 -> 1+8 + 3+6 = 9 + 9 = 18)
+    ```
+
+    **Answer:**
+
+    ```java
+    public static int maxSumPairs(int[] nums) {
+        int[] digitSums = new int[100];
+        for (int num : nums) {
+            int sum = 0;
+            while (num > 0) {
+                sum += num % 10;
+                num /= 10;
+            }
+            digitSums[sum]++;
+        }
+        int maxSum = 0, remaining = 0;
+        for (int i = 0; i < 100; i++) {
+            maxSum += i * (digitSums[i] / 2);
+            remaining += digitSums[i] % 2;
+        }
+        return maxSum + remaining / 2;
+    }
+    ```
+
+    ```java
+    int[] nums = {18, 43, 36, 13, 7};
+    System.out.println(maxSumPairs(nums));
+    ```
+
+    Output:
+
+    ```
+    54
+    ```
+
+    _Source:_ [LeetCode](https://leetcode.com/problems/max-sum-of-a-pair-with-equal-sum-of-digits)
 
     <div align="right">
         <b><a href="#table-of-contents">⬆ Back to Top</a></b>
