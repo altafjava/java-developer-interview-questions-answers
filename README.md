@@ -4,27 +4,40 @@
 
 ## Table of Contents
 
-| No. | Questions                                                                                                                                                                                           |
+### Core Java
+
+| No. | Question                                                                                                                                                           |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1   | [Write an implementation for this funtional interface?](#Write-an-implementation-for-this-funtional-interface)                                                     |
+| 2   | [Difference between map and flatmap in Java 8?](#Difference-between-map-and-flatmap-in-Java-8)                                                                     |
+| 3   | [Find the total marks of all students using Java 8 stream.](#Find-the-total-marks-of-all-students-using-Java-8-stream)                                             |
+| 4   | [Sort the students in descending order based on their marks using Java 8 stream.](#Sort-the-students-in-descending-order-based-on-their-marks-using-Java-8-stream) |
+| 5   | [What will be the output of the following code?](#What-will-be-the-output-of-the-following-code-5)                                                                 |
+| 6   | [What will be the output of the following code?](#What-will-be-the-output-of-the-following-code-6)                                                                 |
+| 7   | [Find the minimum value from int array.](#Find-the-minimum-value-from-int-array)                                                                                   |
+| 8   | [Core Java Question 8](#Core-Java-Question-8)                                                                                                                      |
+| 9   | [Find name of the employee with minimum salary, who earn more than 90000.](#Find-name-of-the-employee-with-minimum-salary-who-earn-more-than-90000)                |
+
+### Spring
+
+| No. | Question                                                                                                             |
+| --- | -------------------------------------------------------------------------------------------------------------------- |
+| 1   | [How to read value from custom properties file in spring?](#How-to-read-value-from-custom-properties-file-in-spring) |
+| 2   | [What is MissingRequestHeaderException?](#What-is-MissingRequestHeaderException)                                     |
+
+### Hibernate/JPA
+
+| No. | Question                                                                                                                                                                                         |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1   | [What is the significance of @Transient annotation?](#What-is-the-significance-of-Transient-annotation)                                                                                          |
+| 2   | [What is the N+1 problem in Hibernate?](#What-is-the-N1-problem-in-Hibernate)                                                                                                                    |
+| 3   | [Difference between CrudRepository's deleteAllByIds() and JpaRepository's deleteAllByIdsInBatch().](#Difference-between-CrudRepositorys-deleteAllByIds-and-JpaRepositorys-deleteAllByIdsInBatch) |
+| 4   | [Differences among Repository, CrudRepository, PagingAndSortingRepository, and JpaRepository.](#Differences-among-Repository-CrudRepository-PagingAndSortingRepository-and-JpaRepository)        |
+
+### Data Structure
+
+| No. | Question                                                                                                                                                                                            |
 | --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|     | **Core Java**                                                                                                                                                                                       |
-| 1   | [Write an implementation for this funtional interface?](#Write-an-implementation-for-this-funtional-interface)                                                                                      |
-| 2   | [Difference between map and flatmap in Java 8?](#Difference-between-map-and-flatmap-in-Java-8)                                                                                                      |
-| 3   | [Find the total marks of all students using Java 8 stream.](#Find-the-total-marks-of-all-students-using-Java-8-stream)                                                                              |
-| 4   | [Sort the students in descending order based on their marks using Java 8 stream.](#Sort-the-students-in-descending-order-based-on-their-marks-using-Java-8-stream)                                  |
-| 5   | [What will be the output of the following code?](#What-will-be-the-output-of-the-following-code-5)                                                                                                  |
-| 6   | [What will be the output of the following code?](#What-will-be-the-output-of-the-following-code-6)                                                                                                  |
-| 7   | [Find the minimum value from int array.](#Find-the-minimum-value-from-int-array)                                                                                                                    |
-| 8   | [Core Java Question 8](#Core-Java-Question-8)                                                                                                                                                       |
-| 9   | [Find name of the employee with minimum salary, who earn more than 90000.](#Find-name-of-the-employee-with-minimum-salary-who-earn-more-than-90000)                                                 |
-|     | **Spring**                                                                                                                                                                                          |
-| 1   | [How to read value from custom properties file in spring?](#How-to-read-value-from-custom-properties-file-in-spring)                                                                                |
-| 2   | [What is MissingRequestHeaderException?](#What-is-MissingRequestHeaderException)                                                                                                                    |
-|     | **Hibernate/JPA**                                                                                                                                                                                   |
-| 1   | [What is the significance of @Transient annotation?](#What-is-the-significance-of-Transient-annotation)                                                                                             |
-| 2   | [What is the N+1 problem in Hibernate?](#What-is-the-N1-problem-in-Hibernate)                                                                                                                       |
-| 3   | [Difference between CrudRepository's deleteAllByIds() and JpaRepository's deleteAllByIdsInBatch().](#Difference-between-CrudRepositorys-deleteAllByIds-and-JpaRepositorys-deleteAllByIdsInBatch)    |
-| 4   | [Differences among Repository, CrudRepository, PagingAndSortingRepository, and JpaRepository.](#Differences-among-Repository-CrudRepository-PagingAndSortingRepository-and-JpaRepository)           |
-|     | **Data Structure**                                                                                                                                                                                  |
 | 1   | [Reverse this array without new array.](#Reverse-this-array-without-new-array)                                                                                                                      |
 | 2   | [Write a Java program that counts the frequency of each character in a given string.](#Write-a-Java-program-that-counts-the-frequency-of-each-character-in-a-given-string)                          |
 | 3   | [Find the length of the longest substring without repeating characters.](#Find-the-length-of-the-longest-substring-without-repeating-characters)                                                    |
@@ -37,18 +50,30 @@
 | 10  | [Given a string reverse the vowels from right to left.](#Given-a-string-reverse-the-vowels-from-right-to-left)                                                                                      |
 | 11  | [Max Sum of a Pair With Equal Sum of Digits](#Max-Sum-of-a-Pair-With-Equal-Sum-of-Digits)                                                                                                           |
 | 12  | [Swaps numbers without using a temporary variable.](#Swaps-numbers-without-using-a-temporary-variable)                                                                                              |
-|     | **Database**                                                                                                                                                                                        |
-| 1   | [Write a query to update city in employee table from address table.](#Write-a-query-to-update-city-in-employee-table-from-address-table)                                                            |
-| 2   | [Database Question 2](#Database-Question-2)                                                                                                                                                         |
-| 3   | [Find duplicate rows from the below shop table.](#Find-duplicate-rows-from-the-below-shop-table)                                                                                                    |
-| 4   | [Find names of all employees who lives in Delhi.](#Find-names-of-all-employees-who-lives-in-Delhi)                                                                                                  |
-| 5   | [Find employees with above average salaries in their departments.](#Find-employees-with-above-average-salaries-in-their-departments)                                                                |
-|     | **Apache Kafka**                                                                                                                                                                                    |
-| 1   | [Can you explain the internal architecture of Kafka?](#Can-you-explain-the-internal-architecture-of-Kafka)                                                                                          |
-| 2   | [How do you manage a Kafka broker failure?](#How-do-you-manage-a-Kafka-broker-failure)                                                                                                              |
-| 3   | [Apache Kafka Question 1](#Apache-Kafka-Question-3)                                                                                                                                                 |
-|     | **Miscellaneous**                                                                                                                                                                                   |
-| 1   | [What is "Death by a thousand cuts" problem in software development?](#What-is-Death-by-a-thousand-cuts-problem-in-software-development)                                                            |
+
+### Database
+
+| No. | Question                                                                                                                                 |
+| --- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | [Write a query to update city in employee table from address table.](#Write-a-query-to-update-city-in-employee-table-from-address-table) |
+| 2   | [Database Question 2](#Database-Question-2)                                                                                              |
+| 3   | [Find duplicate rows from the below shop table.](#Find-duplicate-rows-from-the-below-shop-table)                                         |
+| 4   | [Find names of all employees who lives in Delhi.](#Find-names-of-all-employees-who-lives-in-Delhi)                                       |
+| 5   | [Find employees with above average salaries in their departments.](#Find-employees-with-above-average-salaries-in-their-departments)     |
+
+### Apache Kafka
+
+| No. | Question                                                                                                   |
+| --- | ---------------------------------------------------------------------------------------------------------- |
+| 1   | [Can you explain the internal architecture of Kafka?](#Can-you-explain-the-internal-architecture-of-Kafka) |
+| 2   | [How do you manage a Kafka broker failure?](#How-do-you-manage-a-Kafka-broker-failure)                     |
+| 3   | [Apache Kafka Question 1](#Apache-Kafka-Question-3)                                                        |
+
+### Miscellaneous
+
+| No. | Question                                                                                                                                 |
+| --- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | [What is "Death by a thousand cuts" problem in software development?](#What-is-Death-by-a-thousand-cuts-problem-in-software-development) |
 
 ## Core Java
 
@@ -70,7 +95,7 @@
    ```
 
    <div align="right">
-       <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+       <b><a href="#Core-Java">⬆ Back to Top</a></b>
    </div>
 
 2. ### Difference between map and flatmap in Java 8.
@@ -94,7 +119,7 @@
      ```
 
    <div align="right">
-       <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+       <b><a href="#Core-Java">⬆ Back to Top</a></b>
    </div>
 
 3. ### Find the total marks of all students using Java 8 stream.
@@ -113,7 +138,7 @@
    ```
 
    <div align="right">
-       <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+       <b><a href="#Core-Java">⬆ Back to Top</a></b>
    </div>
 
 4. ### Sort the students in descending order based on their marks using Java 8 stream.
@@ -140,7 +165,7 @@
    ```
 
    <div align="right">
-       <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+       <b><a href="#Core-Java">⬆ Back to Top</a></b>
    </div>
 
 5. ### What will be the output of the following code 5?
@@ -156,7 +181,7 @@
    `b2` will be `false` because the default `equals()` method in Object also checks for reference equality. Unless equals() is overridden in the Employee class to compare the attributes, it behaves the same as `==`.
 
    <div align="right">
-       <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+       <b><a href="#Core-Java">⬆ Back to Top</a></b>
    </div>
 
 6. ### What will be the output of the following code 6?
@@ -186,7 +211,7 @@
    - The finally block contains a return statement that returns 3, which overrides the previous return value.
 
    <div align="right">
-       <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+       <b><a href="#Core-Java">⬆ Back to Top</a></b>
    </div>
 
 7. ### Find the minimum value from int array.
@@ -204,7 +229,7 @@
    ```
 
    <div align="right">
-       <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+       <b><a href="#Core-Java">⬆ Back to Top</a></b>
    </div>
 
 8. ### Core Java Question 8
@@ -234,7 +259,7 @@
      **Answer:** a) ArrayList
 
    <div align="right">
-       <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+       <b><a href="#Core-Java">⬆ Back to Top</a></b>
    </div>
 
 9. ### Find name of the employee with minimum salary, who earn more than 90000.
@@ -263,7 +288,7 @@
    ```
 
    <div align="right">
-       <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+       <b><a href="#Core-Java">⬆ Back to Top</a></b>
    </div>
 
 ## Spring
@@ -301,7 +326,7 @@
       ```
 
     <div align="right">
-        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+        <b><a href="#Spring">⬆ Back to Top</a></b>
     </div>
 
 2. ### What is MissingRequestHeaderException?
@@ -329,7 +354,7 @@
    ```
 
    <div align="right">
-       <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+       <b><a href="#Spring">⬆ Back to Top</a></b>
    </div>
 
 ## Hibernate/JPA
@@ -403,7 +428,7 @@
        ```
 
     <div align="right">
-        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+        <b><a href="#HibernateJPA">⬆ Back to Top</a></b>
     </div>
 
 2.  ### What is the N+1 problem in Hibernate?
@@ -472,7 +497,7 @@
     By using appropriate fetch strategies and tuning the mappings, we can mitigate the N+1 problem in Hibernate and improve the performance of data retrieval operations.
 
     <div align="right">
-        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+        <b><a href="#HibernateJPA">⬆ Back to Top</a></b>
     </div>
 
 3.  ### Difference between CrudRepository's deleteAllByIds() and JpaRepository's deleteAllByIdsInBatch().
@@ -514,7 +539,7 @@
     By choosing the appropriate method based on the number of entities to be deleted and the performance requirements, we can optimize the deletion process and improve the efficiency of bulk deletion operations in Spring Data repositories.
 
     <div align="right">
-         <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+         <b><a href="#HibernateJPA">⬆ Back to Top</a></b>
     </div>
 
 4.  ### Differences among Repository, CrudRepository, PagingAndSortingRepository, and JpaRepository.
@@ -570,7 +595,7 @@
     - Use `JpaRepository` when we require advanced JPA-specific features in addition to CRUD operations, pagination, and sorting.
 
     <div align="right">
-         <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+         <b><a href="#HibernateJPA">⬆ Back to Top</a></b>
     </div>
 
 ## Data Structure
@@ -602,7 +627,7 @@
     ```
 
     <div align="right">
-        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+        <b><a href="#Data-Structure">⬆ Back to Top</a></b>
     </div>
 
 2.  ### Write a Java program that counts the frequency of each character in a given string.
@@ -633,7 +658,7 @@
     ```
 
     <div align="right">
-        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+        <b><a href="#Data-Structure">⬆ Back to Top</a></b>
     </div>
 
 3.  ### Find the length of the longest substring without repeating characters.
@@ -668,7 +693,7 @@
     ```
 
     <div align="right">
-        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+        <b><a href="#Data-Structure">⬆ Back to Top</a></b>
     </div>
 
 4.  ### Find the longest non-repeating substring in a given string.
@@ -706,7 +731,7 @@
     ```
 
     <div align="right">
-        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+        <b><a href="#Data-Structure">⬆ Back to Top</a></b>
     </div>
 
 5.  ### Given a list of integers, find the 3rd largest number in O(n) time.
@@ -800,7 +825,7 @@
     ```
 
     <div align="right">
-        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+        <b><a href="#Data-Structure">⬆ Back to Top</a></b>
     </div>
 
 6.  ### Given an array of integers, find all subarrays whose sum is equal to 5.
@@ -840,7 +865,7 @@
     ```
 
     <div align="right">
-        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+        <b><a href="#Data-Structure">⬆ Back to Top</a></b>
     </div>
 
 7.  ### Given two integer arrays, find the common elements between them.
@@ -880,7 +905,7 @@
     ```
 
     <div align="right">
-        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+        <b><a href="#Data-Structure">⬆ Back to Top</a></b>
     </div>
 
 8.  ### Given two integer arrays, determine if they contain the same elements regardless of their order.
@@ -936,7 +961,7 @@
     ```
 
     <div align="right">
-        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+        <b><a href="#Data-Structure">⬆ Back to Top</a></b>
     </div>
 
 9.  ### DSA Question 9
@@ -972,7 +997,7 @@
     **Answer:** d) HashMap
 
     <div align="right">
-        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+        <b><a href="#Data-Structure">⬆ Back to Top</a></b>
     </div>
 
 10. ### Given a string reverse the vowels from right to left.
@@ -1020,7 +1045,7 @@
     ```
 
     <div align="right">
-        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+        <b><a href="#Data-Structure">⬆ Back to Top</a></b>
     </div>
 
 11. ### Max Sum of a Pair With Equal Sum of Digits
@@ -1078,7 +1103,7 @@
     _Source:_ [LeetCode](https://leetcode.com/problems/max-sum-of-a-pair-with-equal-sum-of-digits)
 
     <div align="right">
-        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+        <b><a href="#Data-Structure">⬆ Back to Top</a></b>
     </div>
 
 12. ### Swaps numbers without using a temporary variable.
@@ -1098,7 +1123,7 @@
     ```
 
     <div align="right">
-        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+        <b><a href="#Data-Structure">⬆ Back to Top</a></b>
     </div>
 
 ## Database
@@ -1125,7 +1150,7 @@
    ```
 
     <div align="right">
-        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+        <b><a href="#Database">⬆ Back to Top</a></b>
     </div>
 
 2. ### Database Question 2
@@ -1138,7 +1163,7 @@
    ```
 
     <div align="right">
-        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+        <b><a href="#Database">⬆ Back to Top</a></b>
     </div>
 
 3. ### Find duplicate rows from the below shop table.
@@ -1173,7 +1198,7 @@
    ```
 
    <div align="right">
-       <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+       <b><a href="#Database">⬆ Back to Top</a></b>
    </div>
 
 4. ### Find names of all employees who lives in Delhi.
@@ -1210,7 +1235,7 @@
    ```
 
    <div align="right">
-       <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+       <b><a href="#Database">⬆ Back to Top</a></b>
    </div>
 
 5. ### Find employees with above average salaries in their departments.
@@ -1248,7 +1273,7 @@
    ```
 
    <div align="right">
-       <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+       <b><a href="#Database">⬆ Back to Top</a></b>
    </div>
 
 ## Apache Kafka
@@ -1313,7 +1338,7 @@
    ```
 
     <div align="right">
-        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+        <b><a href="#Apache-Kafka">⬆ Back to Top</a></b>
     </div>
 
 2. ### How do you manage a Kafka broker failure?
@@ -1337,7 +1362,7 @@
    7. **Backup and Disaster Recovery:** Implement backup and disaster recovery strategies to protect data in case of catastrophic failures. Regularly back up Kafka data and configurations, and establish disaster recovery procedures to restore the cluster in the event of a major outage.
 
    <div align="right">
-       <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+       <b><a href="#Apache-Kafka">⬆ Back to Top</a></b>
    </div>
 
 3. ### Apache Kafka Question 3
@@ -1356,7 +1381,7 @@
    _Consumer Group Coordination:_ Kafka ensures that within a consumer group, each partition is only consumed by one consumer, preventing duplicate processing of messages. If a consumer fails or is added to the group, Kafka will rebalance the partitions among the available consumers to ensure continued parallel processing.
 
    <div align="right">
-       <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+       <b><a href="#Apache-Kafka">⬆ Back to Top</a></b>
    </div>
 
 ## Miscellaneous
@@ -1368,5 +1393,5 @@
    **Example:** Ignoring code quality, not following coding standards, not addressing technical debt, lack of code reviews, not fixing bugs promptly, etc. can contribute to the "death by a thousand cuts" problem.
 
    <div align="right">
-       <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+       <b><a href="#Miscellaneous">⬆ Back to Top</a></b>
    </div>
