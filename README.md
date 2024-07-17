@@ -15,6 +15,7 @@
 | 6   | [What will be the output of the following code?](#What-will-be-the-output-of-the-following-code-6)                                                                                                  |
 | 7   | [Find the minimum value from int array.](#Find-the-minimum-value-from-int-array)                                                                                                                    |
 | 8   | [Core Java Question 8](#Core-Java-Question-8)                                                                                                                                                       |
+| 9   | [Find name of the employee with minimum salary, who earn more than 90000.](#Find-name-of-the-employee-with-minimum-salary-who-earn-more-than-90000)                                                 |
 |     | **Spring**                                                                                                                                                                                          |
 | 1   | [How to read value from custom properties file in spring?](#How-to-read-value-from-custom-properties-file-in-spring)                                                                                |
 | 2   | [What is MissingRequestHeaderException?](#What-is-MissingRequestHeaderException)                                                                                                                    |
@@ -35,10 +36,13 @@
 | 9   | [DSA Question 9](#DSA-Question-9)                                                                                                                                                                   |
 | 10  | [Given a string reverse the vowels from right to left.](#Given-a-string-reverse-the-vowels-from-right-to-left)                                                                                      |
 | 11  | [Max Sum of a Pair With Equal Sum of Digits](#Max-Sum-of-a-Pair-With-Equal-Sum-of-Digits)                                                                                                           |
+| 12  | [Swaps numbers without using a temporary variable.](#Swaps-numbers-without-using-a-temporary-variable)                                                                                              |
 |     | **Database**                                                                                                                                                                                        |
 | 1   | [Write a query to update city in employee table from address table.](#Write-a-query-to-update-city-in-employee-table-from-address-table)                                                            |
 | 2   | [Database Question 2](#Database-Question-2)                                                                                                                                                         |
 | 3   | [Find duplicate rows from the below shop table.](#Find-duplicate-rows-from-the-below-shop-table)                                                                                                    |
+| 4   | [Find names of all employees who lives in Delhi.](#Find-names-of-all-employees-who-lives-in-Delhi)                                                                                                  |
+| 5   | [Find employees with above average salaries in their departments.](#Find-employees-with-above-average-salaries-in-their-departments)                                                                |
 |     | **Apache Kafka**                                                                                                                                                                                    |
 | 1   | [Can you explain the internal architecture of Kafka?](#Can-you-explain-the-internal-architecture-of-Kafka)                                                                                          |
 | 2   | [How do you manage a Kafka broker failure?](#How-do-you-manage-a-Kafka-broker-failure)                                                                                                              |
@@ -228,6 +232,35 @@
    - a) ArrayList b) ConcurrentHashMap c) CopyOnWriteArrayList d) LinkedBlockingQueue
 
      **Answer:** a) ArrayList
+
+   <div align="right">
+       <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+   </div>
+
+9. ### Find name of the employee with minimum salary, who earn more than 90000.
+
+   ```java
+   List<Employee> employees = Arrays.asList(
+           new Employee(1, "Alice", 95000, 25),
+           new Employee(2, "Bob", 85000, 30),
+           new Employee(3, "Charlie", 90000, 35),
+           new Employee(4, "David", 92000, 40)
+   );
+   ```
+
+   ```java
+   Optional<String> name = employees.stream()
+           .filter(emp -> emp.getSalary() > 90000)
+           .min(Comparator.comparing(Employee::getSalary))
+           .map(Employee::getName);
+   System.out.println(name.orElse("No employee found"));
+   ```
+
+   Output:
+
+   ```
+   David
+   ```
 
    <div align="right">
        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
@@ -540,7 +573,7 @@
          <b><a href="#table-of-contents">⬆ Back to Top</a></b>
     </div>
 
-## Logical
+## Data Structure
 
 1.  ### Reverse this array without new array.
 
@@ -1048,6 +1081,26 @@
         <b><a href="#table-of-contents">⬆ Back to Top</a></b>
     </div>
 
+12. ### Swaps numbers without using a temporary variable.
+
+    ```java
+    int a = 10, b = 20;
+    a = a + b;
+    b = a - b;
+    a = a - b;
+    System.out.println("a: " + a + ", b: " + b);
+    ```
+
+    Output:
+
+    ```
+    a: 20, b: 10
+    ```
+
+    <div align="right">
+        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+    </div>
+
 ## Database
 
 1. ### Write a query to update city in employee table from address table.
@@ -1089,6 +1142,7 @@
     </div>
 
 3. ### Find duplicate rows from the below shop table.
+
    ```
    id | name    | category
    ---|---------|---------
@@ -1099,20 +1153,100 @@
    5  | cake    | sweets
    6  | cake    | sweets
    ```
+
    **Answer:**
+
    ```sql
    SELECT name, category, COUNT(*)
    FROM shop
    GROUP BY name, category
    HAVING COUNT(*) > 1;
    ```
+
    Output:
+
    ```
    name | category | count
    -----|----------|------
    steak| meat     | 2
    cake | sweets   | 3
    ```
+
+   <div align="right">
+       <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+   </div>
+
+4. ### Find names of all employees who lives in Delhi.
+
+   ```
+   Employee Table
+   id | name | city_id
+   ---|------|--------
+   1  | John | 1
+   2  | Alex | 2
+   3  | Bob  | 1
+
+   City Table
+   id | city
+   ---|-----
+   1  | Delhi
+   2  | Mumbai
+   ```
+
+   **Answer:**
+
+   ```sql
+   SELECT e.name
+   FROM employee e
+   JOIN city c ON e.city_id = c.id
+   WHERE c.city = 'Delhi';
+   ```
+
+   Output:
+
+   ```
+   John
+   Bob
+   ```
+
+   <div align="right">
+       <b><a href="#table-of-contents">⬆ Back to Top</a></b>
+   </div>
+
+5. ### Find employees with above average salaries in their departments.
+
+   ```
+   Employee Table
+   id | name | salary | dept_id
+   ---|------|--------|--------
+   1  | John | 5000   | 1
+   2  | Alex | 6000   | 2
+   3  | Bob  | 7000   | 1
+   4  | Mike | 8000   | 2
+
+   Department Table
+   id | name
+   ---|-----
+   1  | HR
+   2  | IT
+   ```
+
+   **Answer:**
+
+   ```sql
+   SELECT e.name, e.salary, d.name AS department
+   FROM employee e
+   JOIN department d ON e.dept_id = d.id
+   WHERE e.salary > (SELECT AVG(salary) FROM employee WHERE dept_id = e.dept_id);
+   ```
+
+   Output:
+
+   ```
+   Bob | 7000 | HR
+   Mike| 8000 | IT
+   ```
+
    <div align="right">
        <b><a href="#table-of-contents">⬆ Back to Top</a></b>
    </div>
