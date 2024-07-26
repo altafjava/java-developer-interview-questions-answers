@@ -17,6 +17,9 @@
 | 7   | [Find the minimum value from int array.](#Find-the-minimum-value-from-int-array)                                                                                   |
 | 8   | [Core Java Question 8](#Core-Java-Question-8)                                                                                                                      |
 | 9   | [Find name of the employee with minimum salary, who earn more than 90000.](#Find-name-of-the-employee-with-minimum-salary-who-earn-more-than-90000)                |
+| 10  | [How many ways can we create objects in Java?](#How-many-ways-can-we-create-objects-in-Java)                                                                       |
+| 11  | [What is an immutable class and how to create?](#What-is-an-immutable-class-and-how-to-create)                                                                     |
+| 12  | [How to create a custom marker interface?](#How-to-create-a-custom-marker-interface)                                                                               |
 
 ### Spring
 
@@ -290,6 +293,142 @@
    <div align="right">
        <b><a href="#Core-Java">⬆ Back to Top</a></b>
    </div>
+
+10. ### How many ways can we create objects in Java?
+
+    In Java, there are several ways to create objects:
+
+    1. **Using the `new` keyword:**
+
+       - The most common way to create an object in Java is by using the `new` keyword followed by a constructor call.
+       - For example: `Employee emp = new Employee();`
+
+    2. **Using `Class.forName() method:**
+
+       - We can create an object using the `Class.forName()` method by providing the fully qualified class name.
+       - For example: `Employee emp = (Employee) Class.forName("com.example.Employee").newInstance();`
+
+    3. **Using `clone() method:**
+
+       - We can create a copy of an existing object using the `clone()` method.
+       - For example: `Employee emp = (Employee) existingEmp.clone();`
+
+    4. **Using `Deserialization:**
+
+       - We can create an object by deserializing it from a file or stream using Java serialization.
+       - For example: `ObjectInputStream in = new ObjectInputStream(new FileInputStream("employee.ser")); Employee emp = (Employee) in.readObject();`
+
+    5. **Using `Object creation using newInstance() method:**
+       - We can create an object using the `newInstance()` method of the `Class` class.
+       - For example: `Employee emp = Employee.class.newInstance();`
+
+    <div align="right">
+        <b><a href="#Core-Java">⬆ Back to Top</a></b>
+    </div>
+
+11. ### What is an immutable class and how to create?
+
+    An immutable class in Java is a class whose objects cannot be modified once they are created. The state of an immutable object remains constant throughout its lifetime, and any attempt to modify its state results in the creation of a new object with the modified state. Immutable classes are thread-safe, as they are inherently free.
+    Example:
+
+    ```java
+    public final class ImmutableClass {
+        private final int id;
+        private final String name;
+
+        public ImmutableClass(int id, String name) {
+            this.id = id;
+            this.name = name;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public String getName() {
+            return name;
+        }
+    }
+    ```
+
+    In the above example, the `ImmutableClass` is declared as `final` to prevent subclassing. The class has two private final fields `id` and `name`, which are initialized through the constructor. The class provides getter methods to access the fields but does not provide any setter methods to modify the state of the object. By making the fields `private` and `final`, the class ensures that the state of the object cannot be changed once it is created. Any attempt to modify the object's state will result in the creation of a new object with the modified state.
+
+    _**What will happen if we have a `List` or any mutable field in an immutable class?**_
+
+    If an immutable class contains a `List` or any mutable variable, the immutability of the class is compromised because the List can be modified even if the class itself is immutable. To maintain immutability, the List should be defensively copied in the constructor or getter method to prevent external modification. For example:
+
+    ```java
+    public final class ImmutableClass {
+        private final int id;
+        private final String name;
+        private final List<String> items;
+
+        public ImmutableClass(int id, String name, List<String> items) {
+            this.id = id;
+            this.name = name;
+            this.items = new ArrayList<>(items);
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public List<String> getItems() {
+            return new ArrayList<>(items);
+        }
+    }
+    ```
+
+    In the above example, the `items` List is defensively copied in the constructor to ensure that the original List is not modified externally. The `getItems()` method also returns a copy of the List to prevent direct access to the internal state of the object.
+
+    <div align="right">
+        <b><a href="#Core-Java">⬆ Back to Top</a></b>
+    </div>
+
+12. ### How to create a custom marker interface?
+
+    A marker interface in Java is an interface that does not contain any methods or fields but is used to mark or tag classes that implement it. Marker interfaces are used to provide metadata or marker information about classes at runtime. To create a custom marker interface in Java, follow these steps:
+
+    1. **Define the marker interface:**
+
+       Create an interface without any methods or fields. This interface will serve as the marker interface.
+
+       ```java
+       public interface MyMarkerInterface {
+           // Marker interface
+       }
+       ```
+
+    2. **Implement the marker interface:**
+
+       Implement the marker interface in the classes that need to be marked or tagged.
+
+       ```java
+       public class MyClass implements MyMarkerInterface {
+           // Class implementation
+       }
+       ```
+
+    3. **Check if a class implements the marker interface:**
+
+       Use the `instanceof` operator to check if a class implements the marker interface.
+
+       ```java
+       MyClass obj = new MyClass();
+       if (obj instanceof MyMarkerInterface) {
+           System.out.println("Class implements the marker interface");
+       }
+       ```
+
+    By following these steps, we can create a custom marker interface in Java and use it to mark or tag classes that implement the interface.
+
+    <div align="right">
+        <b><a href="#Core-Java">⬆ Back to Top</a></b>
+    </div>
 
 ## Spring
 
