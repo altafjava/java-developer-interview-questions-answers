@@ -430,6 +430,39 @@
         <b><a href="#Core-Java">⬆ Back to Top</a></b>
     </div>
 
+13. ### What will be the output of the following Java code, and why?
+
+    ```java
+    class X {
+        void foo(int a) {
+            System.out.println("ONE");
+        }
+
+        void foo(double d) {
+            System.out.println("TWO");
+        }
+    }
+
+    class Y extends X {
+        @Override
+        void foo(double d) {
+            System.out.println("THREE");
+        }
+    }
+
+    public class MainClass {
+        public static void main(String[] args) {
+            new Y().foo(100);
+        }
+    }
+    ```
+
+    **Answer:** The output of the code will be `ONE`. The method `foo(int a)` in class `X` is not overridden in class `Y`, so the method `foo(int a)` from class `X` will be called when `new Y().foo(100)` is executed. The method `foo(double d)` in class `X` is overloaded, not overridden, in class `Y`. Overloading is determined at compile time based on the reference type, while overriding is determined at runtime based on the object type. Since the reference type is `Y`, the overloaded method `foo(double d)` in class `X` is not considered during method resolution. Therefore, the output will be `ONE`.
+
+    <div align="right">
+        <b><a href="#Core-Java">⬆ Back to Top</a></b>
+    </div>
+
 ## Spring
 
 1. ### How to read value from custom properties file in spring?
